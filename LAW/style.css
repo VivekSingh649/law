@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
 *{
     margin: 0;
@@ -210,11 +210,11 @@ button.navbar-toggler:focus {
 }
 
 .Banner_content{
-    position: relative;
-    width: 550px;
-    padding: 20px 40px;
-    color: var(--White-color);
-    z-index: 10;
+  position: relative;
+  width: 550px;
+  padding: 20px 40px;
+  color: var(--White-color);
+  z-index: 10;
 }
 
 .Banner_content h2 {
@@ -340,14 +340,15 @@ button.navbar-toggler:focus {
 }
 
 .courses_table tbody tr:hover {
-  background-color: #e8f0fe;
+  background-color: var(--Primary-color);
+  color: var(--White-color);
 }
 
 .accordion_item {
   margin-bottom: 20px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
 }
 
 .accordion_header {
@@ -357,15 +358,17 @@ button.navbar-toggler:focus {
   background-color: var(--Grey-color);
   cursor: pointer;
   box-shadow: rgba(0,0,0,.1) 0 2px 2px 0;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
 }
 
 .accordion_header:hover{
-    background-color: #e8f0fe
+    background-color: var(--Primary-color);
+    color: var(--White-color);
 }
 
 .accordion_header:hover .accordion_icon{
-    background-color: var(--Grey-color);
+    background-color: var(--White-color);
+    color: var(--Primary-color);
 }
   
 .accordion_header h3 {
@@ -375,37 +378,41 @@ button.navbar-toggler:focus {
 }
 
 .accordion_item.accordion_active{
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
 }
 
-.accordion_item.accordion_active .accordion_header h3 {
-    color: var(--Primary-color);
+.accordion_item.accordion_active .accordion_header{
+    background-color: var(--Primary-color);
+    color: var(--White-color);
 }
 
-.accordion_icon {
-  font-size: 20px;
-  color: black;
+.accordion_icon{
+  color: var(--White-color);
   margin-left: 10px;
   transition: transform 0.3s ease;
-  background-color: #e8f0fe;
+  background-color: var(--Primary-color);
   border-radius: 50%;
   text-align: center;
   transform: rotate(90deg);
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
   position: relative;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
+  
 }
 
 .accordion_icon .accordion_arrow{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-30%, -45%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -50%);
+  font-size: 16px !important;
 }
 
 .accordion_item.accordion_active .accordion_icon {
   transform: rotate(270deg);
+  background-color: var(--White-color);
+  color: var(--Primary-color);
 }
 
 .accordion_content {
@@ -413,11 +420,11 @@ button.navbar-toggler:focus {
   display: none;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
 }
 
 .accordion_content.open{
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
   display: block;
   max-height: 100%; /* Update with an appropriate value based on your content */
 }
@@ -522,7 +529,7 @@ button.navbar-toggler:focus {
 }
 .swiper-slide {
   text-align: center;
-  background: #fff;
+  background: var(--White-color);
   /* Center slide text vertically */
   display: flex;
   justify-content: center;
@@ -696,60 +703,94 @@ button.navbar-toggler:focus {
 .testemonial_section{
   background-color: var(--Grey-color);
   padding: 40px 0;
+  padding-bottom: 60px;
 }
 
-.testemonial-card-wapper{
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  justify-content: space-between;
-}
-
-.testemonial-card{
-  flex: 1;
-  max-width: 370px;
+/* owl craowel slider  */
+.owl-carousel .card {
+  width: 95%;
+  margin: 0 15px;
   background-color: var(--White-color);
-  border-radius: 5px;
-  overflow: hidden;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 280px;
+  padding: 15px !important;
+}
 
-  .qute-icon{
+.owl-carousel .card-body {
+  flex: none;
+}
+
+.owl-carousel .owl-item img {
+  display: block;
+  width: 50% !important;
+  margin: auto;
+  text-align: center;
+}
+
+.owl-nav{
   position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--Primary-color);
-  padding: 15px;
-  display: grid;
-  place-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.owl-nav .owl-prev,
+.owl-nav .owl-next{
+  font-size: 30px;
+  color: #fff;
+  background-color: var(--White-color) !important;
+  border: 1px solid var(--Primary-color) !important;
   width: 45px;
   height: 45px;
   border-radius: 50%;
+  cursor: pointer;
+  transition: all .3s linear;
 }
 
-.bi-quote{
-  font-size: 25px;
-  color: var(--White-color);
+.owl-nav .owl-prev,
+.owl-nav .owl-next i{
+  color: var(--Primary-color) !important;
+  transition: all .3s linear;
 }
 
+.owl-nav .owl-prev:hover,
+.owl-nav .owl-next:hover {
+  background-color: var(--Primary-color) !important;
+  color: var(--White-color) !important;
 }
 
-.testemonial-card .testemonial-content{
-  padding: 15px 20px;
-  position: relative;
-  border-top: 5px solid var(--Grey-color);
+.owl-nav .owl-prev:hover,
+.owl-nav .owl-next:hover  i{
+  color: var(--White-color) !important;
 }
 
-.testemonial-card .testemonial-content {
-.client_name{
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0;
-  padding: 0;
+.owl-dots {
+  text-align: center;
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
 }
-.client_designation{
-  color: #6d6d6d;
-  font-style: italic;
+
+.owl-dot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: var(--Primary-color) !important;
+  opacity: .2;
+  margin: 0 3px;
+  cursor: pointer;
 }
+
+.owl-dot.active {
+  background-color: var(--Primary-color) !important;
+  opacity: 1 !important;
 }
   
 .footer-section{
@@ -761,9 +802,12 @@ button.navbar-toggler:focus {
   color: var(--White-color) !important;
   text-decoration: none !important;
   font-weight: normal !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   &:hover{
     text-decoration: underline !important;
   }
+  
 }
 
 .footer-tittle{

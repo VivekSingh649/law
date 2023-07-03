@@ -29,6 +29,18 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function() {
+    $('a[href^="#"]').on('click', function(event) {
+      event.preventDefault();
+
+      var target = $(this.getAttribute('href'));
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top - 100
+        }, 100);
+      }
+    });
+  });
 
 document.addEventListener('DOMContentLoaded', function () {
     var counters = document.querySelectorAll('.counter');
@@ -58,5 +70,31 @@ accordionItems.forEach(item => {
         item.classList.toggle('accordion_active');
         const content = item.querySelector('.accordion_content');
         content.classList.toggle('open');
+    });
+});
+
+// OWL SLIDER 
+$(document).ready(function () {
+    $('.owl-carousel').owlCarousel({
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }, // Add comma here
+        loop: true,
+        nav: true,
+        navText: ["<i class='bi bi-arrow-left'></i>", "<i class='bi bi-arrow-right'></i>"],
+        dots: true,
+        dotClass: 'owl-dot',
+        dotActiveClass: 'active',
+        autoplay: true,
+        autoplayTimeout: 3000, // Change slide every 3 seconds
+        autoplayHoverPause: true
     });
 });
