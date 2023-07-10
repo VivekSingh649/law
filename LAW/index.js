@@ -65,13 +65,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const accordionItems = document.querySelectorAll('.accordion_item');
 
+// accordionItems.forEach(item => {
+//     item.addEventListener('click', () => {
+//         item.classList.toggle('accordion_active');
+//         const content = item.querySelector('.accordion_content');
+//         content.classList.toggle('open');
+//     });
+// });
+
 accordionItems.forEach(item => {
-    item.addEventListener('click', () => {
-        item.classList.toggle('accordion_active');
-        const content = item.querySelector('.accordion_content');
-        content.classList.toggle('open');
-    });
+  const header = item.querySelector('.accordion_header');
+  const content = item.querySelector('.accordion_content');
+
+  // Add click event listener to each accordion header
+  header.addEventListener('click', () => {
+    item.classList.toggle('accordion_active');
+    content.classList.toggle('open');
+  });
 });
+
 
 // OWL SLIDER 
 $(document).ready(function () {

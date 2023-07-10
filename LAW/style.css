@@ -348,7 +348,7 @@ button.navbar-toggler:focus {
   margin-bottom: 20px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  transition: all 0.3s linear;
+  transition: max-height 0.3s linear;
 }
 
 .accordion_header {
@@ -358,17 +358,17 @@ button.navbar-toggler:focus {
   background-color: var(--Grey-color);
   cursor: pointer;
   box-shadow: rgba(0,0,0,.1) 0 2px 2px 0;
-  transition: all 0.3s linear;
+  transition: all 0.3s ease !important;
 }
 
 .accordion_header:hover{
-    background-color: var(--Primary-color);
-    color: var(--White-color);
+  background-color: var(--Primary-color);
+  color: var(--White-color);
 }
 
 .accordion_header:hover .accordion_icon{
-    background-color: var(--White-color);
-    color: var(--Primary-color);
+  background-color: var(--White-color);
+  color: var(--Primary-color);
 }
   
 .accordion_header h3 {
@@ -378,7 +378,7 @@ button.navbar-toggler:focus {
 }
 
 .accordion_item.accordion_active{
-  transition: all 0.3s linear;
+  transition: all 0.3s ease !important;
 }
 
 .accordion_item.accordion_active .accordion_header{
@@ -397,7 +397,7 @@ button.navbar-toggler:focus {
   width: 30px;
   height: 30px;
   position: relative;
-  transition: all 0.3s linear;
+  transition: all 0.3s ease !important;
   
 }
 
@@ -420,11 +420,10 @@ button.navbar-toggler:focus {
   display: none;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3s linear;
+  transition: max-height 0.3s ease !important;
 }
 
 .accordion_content.open{
-  transition: all 0.3s linear;
   display: block;
   max-height: 100%; /* Update with an appropriate value based on your content */
 }
